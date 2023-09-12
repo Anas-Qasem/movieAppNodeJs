@@ -9,6 +9,7 @@ const db = require('./model/db');
 /// Db ///
 /// routes ///
 const MovieRoutes = require('./routes/movie-router');
+const UserRoute = require('./routes/user-router');
 /// routes ///
 
 /// main
@@ -21,5 +22,6 @@ db.on('error',(error)=>{
 });
 /// endpoints
 app.use('/api',MovieRoutes);
+app.use('/api',UserRoute);
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
